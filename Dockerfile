@@ -6,11 +6,12 @@ ENV LANGUAGE en_US:en
 ENV GOTTY_TAG_VER v1.0.1
 
 RUN apt-get -y update && \
-    apt-get install -y curl && \
+    apt-get install -y curl sudo wget screen python git && \
     curl -sLk https://github.com/yudai/gotty/releases/download/${GOTTY_TAG_VER}/gotty_linux_amd64.tar.gz \
     | tar xzC /usr/local/bin && \
     apt-get purge --auto-remove -y curl && \
     apt-get clean && \
+        apt-get install -y curl && \
     rm -rf /var/lib/apt/lists*
 
 
