@@ -11,7 +11,6 @@ RUN apt-get -y update && \
     | tar xzC /usr/local/bin && \
     apt-get purge --auto-remove -y curl && \
     apt-get clean && \
-        apt-get install -y curl && \
     rm -rf /var/lib/apt/lists*
 
 
